@@ -1,0 +1,15 @@
+
+.technologies{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  scroll-snap-align: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.technologies > h2 {
+  font-size: 38px;
+  font-weight: 600;
+}

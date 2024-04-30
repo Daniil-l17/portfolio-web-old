@@ -1,0 +1,42 @@
+
+
+.header{
+  display: flex;
+  padding: 10px 30px 10px 30px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0 ;
+  justify-content: space-between;
+}
+
+.header > h1 {
+  font-size: 28px;
+  cursor: pointer;
+  &:hover{
+    scale: 1.1;
+    transition: all 0.3s ease-in;
+  }
+}
+
+
+
+.menu{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+
+.menu > li {
+  list-style-type: none;
+}
+
+.menu > li > a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+}
