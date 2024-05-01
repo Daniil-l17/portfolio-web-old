@@ -24,7 +24,7 @@ export const About = () => {
               ReactJS, NextJS, TypeScript.
             </p>
             <div className="flex items-center gap-4 mt-4">
-              <a  href="https://github.com/Daniil-l17" target="_blank">
+              <a href="https://github.com/Daniil-l17" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -45,7 +45,7 @@ export const About = () => {
           </div>
           <div>
             <img
-              className=" rounded-[50%]"
+              className=" hoverAvatar rounded-[50%]"
               width={350}
               height={350}
               src="/photo_2024-04-26_19-54-44vsdvssa.jpg"

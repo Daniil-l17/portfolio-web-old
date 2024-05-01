@@ -22,7 +22,7 @@ export const Header = () => {
   }, [theme])
 
   return (
-    <header className={style.header}>
+    <header style={theme === 'ligth' ? {background: 'rgba(240, 240, 240, 0.71)'} : {background: '#1a1919b5'}} className={style.header}>
       <h1 onClick={togleTheme}>Daniil.dev</h1>
       <ul className={style.menu}>
         {menu.map((item, index) => {

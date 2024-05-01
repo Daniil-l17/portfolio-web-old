@@ -12,7 +12,7 @@ export const useTheme = create(
       theme: 'ligth',
       togleTheme: () =>
         set(state => ({
-          theme: state.theme === 'ligth' ? 'dark' : 'ligth',
+          ['theme']: state['theme'] === 'ligth' ? 'dark' : 'ligth',
         })),
     }),
     {
