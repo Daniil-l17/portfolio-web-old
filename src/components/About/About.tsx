@@ -24,12 +24,12 @@ export const About = () => {
               ReactJS, NextJS, TypeScript.
             </p>
             <div className="flex items-center gap-4 mt-4">
-              <a href="https://github.com/Daniil-l17" target="_blank">
+              <a  href="https://github.com/Daniil-l17" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 15 15"
-                  className="w-8 cursor-pointer">
+                  className="w-8 scaleHover cursor-pointer">
                   <path
                     clip-rule="evenodd"
                     fill-rule="evenodd"
@@ -39,7 +39,7 @@ export const About = () => {
                 </svg>
               </a>
               <a target="_blank" href="https://www.codewars.com/users/Daniil-l17">
-                <img width={45} src="/5387632.png" alt="" />
+                <img className='scaleHover' width={45} src="/5387632.png" alt="" />
               </a>
             </div>
           </div>
@@ -58,7 +58,7 @@ export const About = () => {
           <div className="flex  items-center gap-6">
             {stack.map((item, index) => (
               <a key={index} target="_blank" href={item.link}>
-                <img width={35} src={`/${item.name}`} alt="" />
+                <img className='scaleHover' width={35} src={`/${item.name}`} alt="" />
               </a>
             ))}
           </div>

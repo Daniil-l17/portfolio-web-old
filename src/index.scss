@@ -26,6 +26,13 @@ body{
   background: #ffffff;
 }
 
+.scaleHover{
+  &:hover{
+    scale: 1.2;
+    transition: all 0.3s ease-in;
+  }
+}
+
 .darkTheme{
   color: white;
   transition: all 0.4s ease-in-out;
