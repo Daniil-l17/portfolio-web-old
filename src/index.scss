@@ -20,9 +20,16 @@ html {
 }
 
 body{
-  color: black;
   font-family: "Noto Sans", sans-serif;
+  color: black;
+  transition: all 0.4s ease-in-out;
   background: #ffffff;
+}
+
+.darkTheme{
+  color: white;
+  transition: all 0.4s ease-in-out;
+  background: #222;
 }
 
 .card {
@@ -30,11 +37,9 @@ body{
   max-width: 300px;
   min-width: 200px;
   height: 250px;
-  background-color: #292929;
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
-  border: 2px solid rgba(7, 7, 7, 0.12);
   font-size: 16px;
   transition: all 0.3s ease;
   position: relative;
@@ -70,7 +75,6 @@ body{
   margin: 0;
   text-align: center;
   margin-top: 30px;
-  color: white;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -81,10 +85,8 @@ body{
   margin: 0 auto;
   font-size: 22px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 20px;
-  color: white;
-  font-weight: 200;
   letter-spacing: 2px;
   opacity: 0;
   max-height: 0;
