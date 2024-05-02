@@ -177,14 +177,15 @@ body {
 
 .hamburger {
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
   display: none;
+  position: relative;
 }
 
-.hamburger input {
-  display: none;
-}
+
 
 .hamburger svg {
+  transition: all 0.4s ease-in-out;
   /* The size of the SVG defines the overall size */
   height: 3em;
   /* Define the transition for transforming the SVG */
@@ -193,6 +194,7 @@ body {
 
 .line {
   fill: none;
+  transition: all 0.4s ease-in-out;
   stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -204,15 +206,18 @@ body {
 
 .line-top-bottom {
   stroke-dasharray: 12 63;
+  transition: all 0.4s ease-in-out;
 }
 
 .hamburger input:checked + svg {
   transform: rotate(-45deg);
+  transition: all 0.4s ease-in-out;
 }
 
 .hamburger input:checked + svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
+  transition: all 0.4s ease-in-out;
 }
 
 @media (max-width: 1070px) {
@@ -225,7 +230,7 @@ body {
   }
 }
 
-.activeburger{
+/*.activeburger{
   background-color: #422b42;
     &::before {
       content: '';
@@ -237,4 +242,4 @@ body {
       right: 0;
       background: #422b42;
     }
-}
+}*/

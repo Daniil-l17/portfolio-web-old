@@ -1,31 +1,23 @@
 import {Link} from 'react-router-dom'
 import style from './header.module.scss'
 import {useTheme} from '../../zustand/zustand'
-import {useEffect, useLayoutEffect, useState} from 'react'
+import {memo, useEffect, useLayoutEffect, useState} from 'react'
+
 const menu = [
-  {name: 'Главная', link: '/'},
+  {name: 'Главная', link: ''},
   {name: 'Обо мне', link: '#about'},
   {name: 'Технологии', link: '#technologies'},
   {name: 'Проекты', link: '#project'},
   {name: 'GitHub Репозитории', link: 'repo'},
 ] as const
-
-export const Header = () => {
+export const Header = memo(() => {
   const {theme, togleTheme} = useTheme()
-
+  const [open, setOpen] = useState(false)
 
   useLayoutEffect(() => {
     if (theme === 'dark') document.body.classList.add('darkTheme')
     else document.body.classList.remove('darkTheme')
   }, [theme])
-  
-/*  useEffect(() => {
-    if(open){
-      openMenu()
-    } else{
-      closeOpen()
-    }
-  },[open])*/
 
   return (
     <header
@@ -34,11 +26,10 @@ export const Header = () => {
           ? {background: 'rgba(240, 240, 240, 0.71)'}
           : {background: '#1a1919b5'}
       }
-      className={`${style.header} `}
+      className={`${style.header}`}
     >
       <h1 onClick={togleTheme}>Daniil.dev</h1>
-      <label className="hamburger">
-        <input type="checkbox" />
+      <label onClick={() => setOpen((prev) => !prev)} className="hamburger">
         <svg viewBox="0 0 32 32">
           <path
             className="line line-top-bottom"
@@ -46,6 +37,45 @@ export const Header = () => {
           ></path>
           <path className="line" d="M7 16 27 16"></path>
         </svg>
+        {open && (
+          <div className=" transition duration-150 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]">
+            {menu.map((item, index) => {
+              if (item.name === 'GitHub Репозитории') {
+                return (
+                  <Link
+                    key={index}
+                    className="no-underline text-current"
+                    replace
+                    to={`/${item.link}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              }
+              if (item.name === 'Главная') {
+                return (
+                  <Link
+                    key={index}
+                    className="no-underline  text-current"
+                    replace
+                    to={`/${item.link}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              }
+              return (
+                <a
+                  key={index}
+                  className="no-underline text-current"
+                  href={`/${item.link}`}
+                >
+                  {item.name}
+                </a>
+              )
+            })}
+          </div>
+        )}
       </label>
       <ul className={`${style.menu} dismida `}>
         {menu.map((item, index) => {
@@ -76,4 +106,4 @@ export const Header = () => {
       </ul>
     </header>
   )
-}
+})

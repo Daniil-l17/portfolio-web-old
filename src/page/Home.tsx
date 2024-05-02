@@ -3,7 +3,8 @@ import {Project} from '../components/Project/Project'
 import {Technologies} from '../components/Technologies/Technologies'
 import {Greetings} from '../components/Greetings/Greetings'
 import {About} from '../components/About/About'
-import { ArrorUp } from '../utils/icon/ArrorUp'
+import {ArrorUp} from '../utils/icon/ArrorUp'
+import {Header} from '../components/Header/Header'
 
 export default function Home() {
   const [viseble, setViseble] = useState(false)

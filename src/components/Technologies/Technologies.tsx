@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import style from './technologies.module.scss';
 
 const technologies = [
@@ -12,6 +13,8 @@ const technologies = [
 ] as const
 
 export const Technologies = () => {
+
+  
   return (
     <div id="technologies" className={`${style.technologies} max-[1060px]:min-h-max max-[1400px]:pt-10`}>
       <h2>Технологии</h2>
