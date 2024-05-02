@@ -16,19 +16,21 @@ export const Greetings = () => {
   return (
     <div className={style.greetings}>
       <div className="flex flex-col ">
-        <div className="flex items-center gap-20">
-          <div className={`${style.lefGreetings} max-[1060px]:w-[420px] `}>
-            <div >
-              <h2 className=" max-[1060px]:text-4xl text-6xl w-[560px] font-extrabold">
+        <div className="flex items-center gap-20 max-[900px]:gap-0 max-[730px]:flex-col-reverse ">
+          <div className={`${style.lefGreetings} max-[1060px]:w-[420px] max-[460px]:w-auto `}>
+            <div className="max-[730px]:mt-4">
+              <h2 className=" max-[1060px]:text-4xl max-[730px]:text-2xl text-6xl w-[560px] font-extrabold max-[730px]:w-auto max-[730px]:text-center">
                 Front-End React
               </h2>
-              <h2 className="text-5xl max-[1060px]:text-4xl mt-3 font-extrabold">Разработчик 👋🏻</h2>
+              <h2 className="text-5xl max-[730px]:text-2xl max-[1060px]:text-4xl mt-3 font-extrabold max-[730px]:w-auto max-[730px]:text-center">
+                Разработчик 👋🏻
+              </h2>
             </div>
-            <p className=" max-[1060px]:w-[380px] mt-6 font-medium w-[550px] text-[#7d7c7e]">
+            <p className="max-[730px]:text-center max-[730px]:w-auto max-[1060px]:w-[380px] mt-6 font-medium w-[550px] text-[#7d7c7e]">
               Привет, меня зовут Даниил Лукьянов. Я Фронтенд-разработчик,
               специализирующийся на ReactJS, NextJS, TypeScript.
             </p>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex items-center gap-4 mt-4 max-[730px]:justify-center">
               <a href="https://github.com/Daniil-l17" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +70,10 @@ export const Greetings = () => {
             />
           </div>
         </div>
-        <div className=" flex gap-4 justify-start max-[1060px]:mt-3">
-          <h2 className="text-lg max-[1060px]:text-base ">Технический Стэк | </h2>
+        <div className=" flex gap-4 justify-start max-[1060px]:mt-4  max-[730px]:flex-col items-center">
+          <h2 className="text-lg max-[1060px]:text-base ">
+            Технический Стэк |{' '}
+          </h2>
           <div className="flex items-center gap-6">
             {stack.map((item, index) => (
               <a key={index} target="_blank" href={item.link}>

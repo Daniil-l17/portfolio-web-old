@@ -11,7 +11,7 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
       <Header />
       <span className="blur1"></span>
       <span className="blur2"></span>
-      <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>{children}</Suspense>
     </QueryClientProvider>
   )
 }

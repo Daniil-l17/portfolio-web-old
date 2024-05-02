@@ -226,6 +226,7 @@ body {
 }
 
 .activeburger{
+  background-color: #422b42;
     &::before {
       content: '';
       position: fixed;

@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import style from './header.module.scss'
 import {useTheme} from '../../zustand/zustand'
-import {useLayoutEffect} from 'react'
+import {useEffect, useLayoutEffect, useState} from 'react'
 const menu = [
   {name: 'Главная', link: '/'},
   {name: 'Обо мне', link: '#about'},
@@ -13,10 +13,19 @@ const menu = [
 export const Header = () => {
   const {theme, togleTheme} = useTheme()
 
+
   useLayoutEffect(() => {
     if (theme === 'dark') document.body.classList.add('darkTheme')
     else document.body.classList.remove('darkTheme')
   }, [theme])
+  
+/*  useEffect(() => {
+    if(open){
+      openMenu()
+    } else{
+      closeOpen()
+    }
+  },[open])*/
 
   return (
     <header

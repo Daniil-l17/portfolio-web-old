@@ -13,7 +13,7 @@ const technologies = [
 
 export const Technologies = () => {
   return (
-    <div id="technologies" className={`${style.technologies} max-[1060px]:h-auto `}>
+    <div id="technologies" className={`${style.technologies} max-[1060px]:min-h-max max-[1400px]:pt-10`}>
       <h2>Технологии</h2>
       <div className="flex justify-center max-w-[1400px] gap-5 flex-wrap">
         {technologies.map((item, index) => (
