@@ -1,20 +1,9 @@
 
-
 .about{
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  scroll-snap-align: start;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  scroll-snap-align: center;
 }
 
-.leftAbout{
-
-}
-
-
-
-/*.pdsv{
-  filter: drop-shadow(0 0 2em #d02c2cab);
-}*/

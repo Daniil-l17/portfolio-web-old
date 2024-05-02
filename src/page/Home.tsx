@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react'
-import {About} from '../components/About/About'
 import {Project} from '../components/Project/Project'
 import {Technologies} from '../components/Technologies/Technologies'
-import {Сontacts} from '../components/contacts/Сontacts'
-import {UpButton} from '../components/upButton/UpButton'
+import {Greetings} from '../components/Greetings/Greetings'
+import {About} from '../components/About/About'
+import { ArrorUp } from '../utils/icon/ArrorUp'
 
 export default function Home() {
   const [viseble, setViseble] = useState(false)
@@ -13,21 +13,18 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (document.documentElement.scrollTop >= 915) {
-        setViseble(true)
-      } else setViseble(false)
+      if (document.documentElement.scrollTop >= 915) return setViseble(true)
+      setViseble(false)
     })
   }, [])
 
-  console.log(viseble)
-
   return (
     <div className=" min-h-[100vh]">
+      <Greetings />
       <About />
       <Technologies />
       <Project />
-      <Сontacts />
-      {viseble && <UpButton prods={prods} />}
+      {viseble && <ArrorUp prods={prods} />}
     </div>
   )
 }

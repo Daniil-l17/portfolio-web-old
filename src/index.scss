@@ -24,19 +24,61 @@ body {
   background: #ffffff;
 }
 
+.blur1 {
+  width: 100px;
+  filter: blur(80px);
+  height: 100px;
+  content: '';
+  position: fixed;
+  background-color: rgb(144, 161, 255);
+  z-index: 1;
+  border-radius: 50%;
+  left: 95px;
+  bottom: 311px;
+  transition: all 1s ease-in;
+  &:hover {
+    transform: translate(50px, -50px);
+  }
+}
+
+.blur2 {
+  width: 100px;
+  filter: blur(80px);
+  height: 100px;
+  content: '';
+  position: fixed;
+  background-color: rgba(215, 41, 31, 0.729);
+  z-index: 1;
+  border-radius: 50%;
+  right: 145px;
+  bottom: 611px;
+  transition: all 1s ease-in;
+  &:hover {
+    transform: translate(-30px, 120px);
+  }
+}
+
+.hover-image-scale {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
 .hoverAvatar {
   transition: all 0.4s ease-in-out;
   cursor: pointer;
+  display: block;
   &:hover {
-    scale: 1.1;
+    transform: scale(1.1);
     filter: saturate(150%);
     transition: all 0.4s ease-in-out;
   }
 }
 
 .scaleHover {
+  transition: all 0.3s ease-in;
   &:hover {
-    scale: 1.2;
+    scale: 1.1;
     transition: all 0.3s ease-in;
   }
 }
