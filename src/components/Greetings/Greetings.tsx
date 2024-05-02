@@ -17,14 +17,14 @@ export const Greetings = () => {
     <div className={style.greetings}>
       <div className="flex flex-col ">
         <div className="flex items-center gap-20">
-          <div className={style.lefGreetings}>
-            <div>
-              <h2 className=" text-6xl w-[560px] font-extrabold">
+          <div className={`${style.lefGreetings} max-[1060px]:w-[420px] `}>
+            <div >
+              <h2 className=" max-[1060px]:text-4xl text-6xl w-[560px] font-extrabold">
                 Front-End React
               </h2>
-              <h2 className="text-5xl mt-3 font-extrabold">Разработчик 👋🏻</h2>
+              <h2 className="text-5xl max-[1060px]:text-4xl mt-3 font-extrabold">Разработчик 👋🏻</h2>
             </div>
-            <p className=" mt-6 font-medium w-[550px] text-[#7d7c7e]">
+            <p className=" max-[1060px]:w-[380px] mt-6 font-medium w-[550px] text-[#7d7c7e]">
               Привет, меня зовут Даниил Лукьянов. Я Фронтенд-разработчик,
               специализирующийся на ReactJS, NextJS, TypeScript.
             </p>
@@ -60,7 +60,7 @@ export const Greetings = () => {
           </div>
           <div className="hover-image-scale">
             <img
-              className=" hoverAvatar rounded-[50%]"
+              className=" hoverAvatar rounded-[50%] max-[1060px]:w-[250px] max-[1060px]:h-[250px]"
               width={350}
               height={350}
               src="/photo_2024-04-26_19-54-44vsdvssa.jpg"
@@ -68,13 +68,13 @@ export const Greetings = () => {
             />
           </div>
         </div>
-        <div className=" flex gap-4 justify-start">
-          <h2 className="text-lg">Технический Стэк | </h2>
-          <div className="flex  items-center gap-6">
+        <div className=" flex gap-4 justify-start max-[1060px]:mt-3">
+          <h2 className="text-lg max-[1060px]:text-base ">Технический Стэк | </h2>
+          <div className="flex items-center gap-6">
             {stack.map((item, index) => (
               <a key={index} target="_blank" href={item.link}>
                 <img
-                  className="scaleHover"
+                  className="scaleHover max-[1060px]:w-[23px]"
                   width={35}
                   src={`/${item.name}`}
                   alt=""

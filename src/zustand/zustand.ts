@@ -9,7 +9,7 @@ interface ITheme {
 export const useTheme = create(
   persist<ITheme>(
     set => ({
-      theme: 'ligth',
+      theme: 'dark',
       togleTheme: () =>
         set(state => ({
           ['theme']: state['theme'] === 'ligth' ? 'dark' : 'ligth',
