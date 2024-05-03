@@ -64,6 +64,7 @@ export const Greetings = () => {
             <img
               className=" hoverAvatar rounded-[50%] max-[1060px]:w-[250px] max-[1060px]:h-[250px]"
               width={350}
+              loading='lazy'
               height={350}
               src="/photo_2024-04-26_19-54-44vsdvssa.jpg"
               alt=""
