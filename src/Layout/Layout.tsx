@@ -18,10 +18,8 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
 
   return (
     <>
-      <div className="relative">
-        <Header />
-      </div>
       <QueryClientProvider client={queryClide}>
+        <Header />
         <span className="blur1"></span>
         <span className="blur2"></span>
         <Suspense fallback={<Loading />}>{children}</Suspense>
