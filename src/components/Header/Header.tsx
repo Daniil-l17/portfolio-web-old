@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import style from './header.module.scss'
 import {useTheme} from '../../zustand/zustand'
-import {memo, useEffect, useLayoutEffect, useState} from 'react'
+import {memo, useLayoutEffect, useState} from 'react'
 
 const menu = [
   {name: 'Главная', link: ''},
