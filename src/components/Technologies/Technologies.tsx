@@ -33,8 +33,8 @@ export const Technologies = () => {
             <p className="text font-bold">{item.interest}%</p>
           </div>
         ))}
-        <p className="text-[#7d7c7e]">и так далее....</p>
       </div>
+        <p className="text-[#7d7c7e]">и так далее....</p>
     </div>
   )
 }
