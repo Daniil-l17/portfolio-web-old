@@ -7,17 +7,18 @@ import dayjs from 'dayjs'
 import relativetim from 'dayjs/plugin/relativeTime'
 import {localeObject} from '../utils/dayjs/localObject'
 import {Button} from '../components/Button/Button'
+import { Loading } from '../components/Loading/Loading'
 dayjs.extend(relativetim)
 
 const directionSort = [
   {title: 'по возрастанию', link: 'asc'},
   {title: 'по убыванию', link: 'desc'},
-]
+] as const
 const sortBy = [
   {title: 'по созданию', link: 'created'},
   {title: 'по обновлению', link: 'updated'},
   {title: 'по названию', link: 'full_name'},
-]
+] as const
 
 export default function GitHubRepo() {
   const [count, setCount] = useState(5)
@@ -91,7 +92,9 @@ export default function GitHubRepo() {
           </div>
           <div className=" justify-center flex flex-wrap gap-10">
             {isLoading ? (
-              <p>loading....</p>
+              <div className='flex justify-center'>
+                <Loading/>
+              </div>
             ) : (
               data?.map((repo) => (
                 <div className=" shadow-2xl shadow-[#f0f0f0] w-52 px-4 py-2 rounded">
@@ -106,12 +109,12 @@ export default function GitHubRepo() {
               ))
             )}
           </div>
-          {!isLoading && (
+          {!isLoading && !isRefetching ? (
             <div className="flex justify-center">
               <Button func={update} title="Загрузить еще" />
             </div>
-          )}
-          {isRefetching && data ? <LoadingGitHubRepoPage /> : null}
+          ) : null}
+          {isRefetching && data?.length ? <LoadingGitHubRepoPage /> : null}
         </div>
       </div>
     </div>

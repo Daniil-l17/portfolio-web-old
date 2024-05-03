@@ -1,4 +1,3 @@
-
 import style from './technologies.module.scss'
 
 const technologies = [
@@ -26,15 +25,17 @@ export const Technologies = () => {
       <div className="flex justify-center max-w-[1400px] gap-5 flex-wrap">
         {technologies.map((item, index) => (
           <div key={index} className="card">
-            <div className="icon">
-              <img width={40} src={`/${item.img}`} alt="" />
-            </div>
-            <p className="title">{item.name}</p>
-            <p className="text font-bold">{item.interest}%</p>
+            <a className="text-current no-underline" href="" target="_blank">
+              <div className="icon">
+                <img width={40} src={`/${item.img}`} alt="" />
+              </div>
+              <p className="title text-current">{item.name}</p>
+              <p className="text text-current font-bold">{item.interest}%</p>
+            </a>
           </div>
         ))}
       </div>
-        <p className="text-[#7d7c7e]">и так далее....</p>
+      <p className="text-[#7d7c7e]">и так далее....</p>
     </div>
   )
 }
