@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import relativetim from 'dayjs/plugin/relativeTime'
 import {localeObject} from '../utils/dayjs/localObject'
 import {Button} from '../components/Button/Button'
-import {Loading} from '../components/Loading/Loading'
+
 dayjs.extend(relativetim)
 
 const directionSort = [
