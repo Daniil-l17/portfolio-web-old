@@ -45,11 +45,10 @@ export const Project = () => {
                     href={item.deploy}
                     target="_blank"
                   >
-{/*                                    <div
+                                    <div
                   style={{backgroundImage: `url(${item['img']})`}}
                   className=" cursor-pointer rounded-md  h-full w-full bg-cover bg-no-repeat"
-                ></div>*/}
-                <img loading='lazy' className='cursor-pointer rounded-md  h-full w-full  object-fill' src={item['img']} alt="" />
+                ></div>
                   </a>
                 <div className="py-2 px-4 ">
                   <div className="flex justify-between items-center">
