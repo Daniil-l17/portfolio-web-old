@@ -40,16 +40,16 @@ export const Project = () => {
           >
             {data?.map((item) => (
               <SwiperSlide className=" rounded-md  mr-4 bg-[#333] ">
-                <div
-                  style={{backgroundImage: `url(${item['img']})`}}
-                  className=" cursor-pointer rounded-md  h-[530px] w-full bg-cover bg-no-repeat"
-                >
                   <a
-                    className=" block w-full h-full"
+                    className=" block rounded-md  h-[530px] w-full"
                     href={item.deploy}
                     target="_blank"
-                  ></a>
-                </div>
+                  >
+                                    <div
+                  style={{backgroundImage: `url(${item['img']})`}}
+                  className=" cursor-pointer rounded-md  h-full w-full bg-cover bg-no-repeat"
+                ></div>
+                  </a>
                 <div className="py-2 px-4 ">
                   <div className="flex justify-between items-center">
                     <h2 className=" uppercase text-base">{item['title']}</h2>
