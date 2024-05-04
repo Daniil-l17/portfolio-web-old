@@ -41,7 +41,7 @@ export const Header = memo(() => {
         <div
           className={` ${
             open ? 'opacity-100' : 'opacity-0 cursor-default'
-          } visible gap-4 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]`}
+          } visible z-20 gap-4 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]`}
         >
           {menu.map((item, index) => {
             if (item.name === 'Главная') {
