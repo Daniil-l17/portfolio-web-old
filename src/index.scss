@@ -87,6 +87,16 @@ body {
   }
 }
 
+.activeRoute{
+&::after{
+  width: 100% !important;
+  height: 2px !important;
+  background: #41a066 !important;
+  display: block !important;
+  transition: all 0.4s ease-in !important;
+}
+}
+
 .darkTheme {
   color: white;
   transition: all 0.4s ease-in-out;

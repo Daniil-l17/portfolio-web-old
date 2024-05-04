@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import style from './header.module.scss'
 import {useTheme} from '../../zustand/zustand'
 import {memo, useLayoutEffect, useState} from 'react'
@@ -13,6 +13,10 @@ const menu = [
 export const Header = memo(() => {
   const {theme, togleTheme} = useTheme()
   const [open, setOpen] = useState(false)
+
+  const locale = useLocation()
+
+  console.log(locale)
 
   useLayoutEffect(() => {
     if (theme === 'dark') document.body.classList.add('darkTheme')
@@ -37,52 +41,73 @@ export const Header = memo(() => {
           ></path>
           <path className="line" d="M7 16 27 16"></path>
         </svg>
-        {open && (
-          <div className=" transition duration-150 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]">
-            {menu.map((item, index) => {
-              if (item.name === 'GitHub Репозитории') {
-                return (
-                  <Link
-                    key={index}
-                    className="no-underline text-current"
-                    replace
-                    to={`/${item.link}`}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              }
-              if (item.name === 'Главная') {
-                return (
-                  <Link
-                    key={index}
-                    className="no-underline  text-current"
-                    replace
-                    to={`/${item.link}`}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              }
+        <div
+          className={` ${
+            open ? 'opacity-100' : 'opacity-0'
+          } visible gap-4 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]`}
+        >
+          {menu.map((item, index) => {
+            if (item.name === 'GitHub Репозитории') {
               return (
-                <a
+                <Link
                   key={index}
-                  className="no-underline text-current"
-                  href={`/${item.link}`}
+                  className={`no-underline ${
+                    locale.pathname === '/repo' && 'text-green-500'
+                  } text-current`}
+                  replace
+                  to={`/${item.link}`}
                 >
                   {item.name}
-                </a>
+                </Link>
               )
-            })}
-          </div>
-        )}
+            }
+            if (item.name === 'Главная') {
+              return (
+                <Link
+                  key={index}
+                  onClick={() => window.scroll(0, 0)}
+                  className={`no-underline ${
+                    locale.hash === '' && locale.pathname === '/'
+                      ? 'text-green-500'
+                      : ''
+                  }  text-current`}
+                  replace
+                  to={`/${item.link}`}
+                >
+                  {item.name}
+                </Link>
+              )
+            }
+            return (
+              <a
+                key={index}
+                className={`no-underline ${
+                  locale.hash === item.link && locale.pathname === '/'
+                    ? 'text-green-500'
+                    : ''
+                }  text-current`}
+                href={`/${item.link}`}
+              >
+                {item.name}
+              </a>
+            )
+          })}
+        </div>
       </label>
       <ul className={`${style.menu} dismida `}>
         {menu.map((item, index) => {
           if (item.name === 'GitHub Репозитории') {
             return (
               <li key={index}>
-                <Link replace to={`/${item.link}`}>
+                <Link
+                  className={`${
+                    locale.pathname === '/repo'
+                      ? style.activeMenu
+                      : style.noActiveMenu
+                  } `}
+                  replace
+                  to={`/${item.link}`}
+                >
                   {item.name}
                 </Link>
               </li>
@@ -91,7 +116,15 @@ export const Header = memo(() => {
           if (item.name === 'Главная') {
             return (
               <li onClick={() => window.scroll(0, 0)} key={index}>
-                <Link replace to={`/${item.link}`}>
+                <Link
+                  className={`${
+                    locale.hash === '' && locale.pathname === '/'
+                      ? style.activeMenu
+                      : style.noActiveMenu
+                  } `}
+                  replace
+                  to={`/${item.link}`}
+                >
                   {item.name}
                 </Link>
               </li>
@@ -99,7 +132,16 @@ export const Header = memo(() => {
           }
           return (
             <li key={index}>
-              <a href={`/${item.link}`}>{item.name}</a>
+              <a
+                className={`${
+                  locale.hash === item.link && locale.pathname === '/'
+                    ? style.activeMenu
+                    : style.noActiveMenu
+                } `}
+                href={`/${item.link}`}
+              >
+                {item.name}
+              </a>
             </li>
           )
         })}

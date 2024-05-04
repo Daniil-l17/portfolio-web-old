@@ -13,7 +13,7 @@ export const Project = () => {
             hide: true,
           }}
           modules={[Scrollbar]}
-          className="mySwiper h-[620px] w-full "
+          className="mySwiper h-[620px] w-[98%] mx-3 "
         >
           <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 1</SwiperSlide>
           <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 2</SwiperSlide>

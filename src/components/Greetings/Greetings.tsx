@@ -15,7 +15,7 @@ const stack = [
 export const Greetings = () => {
   return (
     <div className={style.greetings}>
-      <div className="flex flex-col ">
+      <div className="flex max-[400px]:mt-4 flex-col ">
         <div className="flex items-center gap-20 max-[900px]:gap-0 max-[730px]:flex-col-reverse ">
           <div className={`${style.lefGreetings} max-[1060px]:w-[420px] max-[460px]:w-auto `}>
             <div className="max-[730px]:mt-4">
