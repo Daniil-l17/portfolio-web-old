@@ -39,7 +39,7 @@ export const Project = () => {
             className="mySwiper w-[98%] acaa mx-3 "
           >
             {data?.map((item, index) => (
-              <SwiperSlide key={index} className=" rounded-md  mr-4 bg-[#333] ">
+              <SwiperSlide key={index} className=" rounded-md  min-h-[545px] mr-4 bg-[#333] ">
                 <a
                   className=" block rounded-md max-[600px]:h-[230px] h-[530px] w-full"
                   href={item.deploy}

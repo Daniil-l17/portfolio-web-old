@@ -41,6 +41,9 @@ body {
   }
 }
 
+
+
+
 .blur2 {
   width: 100px;
   filter: blur(80px);
@@ -62,6 +65,16 @@ body {
   display: inline-block;
   overflow: hidden;
   border-radius: 50%;
+}
+
+@media (max-width:700px) {
+  .blur2{
+    bottom: 388px;
+    right: 90px;
+  }
+  .blur1{
+    bottom: 172px;
+  }
 }
 
 .hoverAvatar {
