@@ -54,7 +54,7 @@ export default function GitHubRepo() {
   return (
     <div className="min-h-[100vh] justify-center mx-4 flex ">
       <div className=" gap-16 justify-center flex w-auto max-w-[1400px] m-auto flex-col">
-        <div className="flex relative justify-between items-center">
+        <div className="flex relative  gap-4 justify-between items-center">
           <h2 className=" text-2xl">GitHub репозитории</h2>
           <Button func={() => setOpen((prev) => !prev)} title="сортировать" />
           <div
@@ -89,10 +89,10 @@ export default function GitHubRepo() {
             </div>
           </div>
         </div>
-        <div className=" justify-center flex flex-wrap gap-10">
+<div className=" justify-center flex flex-wrap gap-10">
           {isLoading ? (
             <div className="flex justify-center">
-              <Loading />
+              <p>загрузка....</p>
             </div>
           ) : (
             data?.map((repo) => (
@@ -106,8 +106,9 @@ export default function GitHubRepo() {
                 </div>
               </div>
             ))
+            
           )}
-        </div>
+        </div> 
         {!isLoading && !isRefetching ? (
           <div className="flex justify-center">
             <Button func={update} title="Загрузить еще" />
