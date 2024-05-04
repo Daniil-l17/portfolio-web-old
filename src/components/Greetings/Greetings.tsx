@@ -62,7 +62,7 @@ export const Greetings = () => {
           </div>
           <div className="hover-image-scale">
             <img
-              className=" hoverAvatar rounded-[50%] max-[1060px]:w-[250px] max-[1060px]:h-[250px]"
+              className=" hoverAvatar z-20 rounded-[50%] max-[1060px]:w-[250px] max-[1060px]:h-[250px]"
               width={350}
               loading='lazy'
               height={350}
