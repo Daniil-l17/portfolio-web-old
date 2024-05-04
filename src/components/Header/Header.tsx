@@ -8,7 +8,6 @@ const menu = [
   {name: 'Обо мне', link: '#about'},
   {name: 'Технологии', link: '#technologies'},
   {name: 'Проекты', link: '#project'},
-  {name: 'GitHub Репозитории', link: 'repo'},
 ] as const
 export const Header = memo(() => {
   const {theme, togleTheme} = useTheme()
@@ -16,7 +15,7 @@ export const Header = memo(() => {
 
   const locale = useLocation()
 
-  console.log(locale)
+
 
   useLayoutEffect(() => {
     if (theme === 'dark') document.body.classList.add('darkTheme')
@@ -47,20 +46,6 @@ export const Header = memo(() => {
           } visible gap-4 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]`}
         >
           {menu.map((item, index) => {
-            if (item.name === 'GitHub Репозитории') {
-              return (
-                <Link
-                  key={index}
-                  className={`no-underline ${
-                    locale.pathname === '/repo' && 'text-green-500'
-                  } text-current`}
-                  replace
-                  to={`/${item.link}`}
-                >
-                  {item.name}
-                </Link>
-              )
-            }
             if (item.name === 'Главная') {
               return (
                 <Link
@@ -96,23 +81,6 @@ export const Header = memo(() => {
       </label>
       <ul className={`${style.menu} dismida `}>
         {menu.map((item, index) => {
-          if (item.name === 'GitHub Репозитории') {
-            return (
-              <li key={index}>
-                <Link
-                  className={`${
-                    locale.pathname === '/repo'
-                      ? style.activeMenu
-                      : style.noActiveMenu
-                  } `}
-                  replace
-                  to={`/${item.link}`}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            )
-          }
           if (item.name === 'Главная') {
             return (
               <li onClick={() => window.scroll(0, 0)} key={index}>

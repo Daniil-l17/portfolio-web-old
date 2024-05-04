@@ -38,8 +38,8 @@ export const Project = () => {
             modules={[Scrollbar]}
             className="mySwiper w-[98%] acaa mx-3 "
           >
-            {data?.map((item) => (
-              <SwiperSlide className=" rounded-md  mr-4 bg-[#333] ">
+            {data?.map((item, index) => (
+              <SwiperSlide key={index} className=" rounded-md  mr-4 bg-[#333] ">
                 <a
                   className=" block rounded-md max-[600px]:h-[230px] h-[530px] w-full"
                   href={item.deploy}
@@ -67,8 +67,10 @@ export const Project = () => {
                   <div className=" mb-4 mt-2">
                     <h2 className=" text-lg">Функионал - </h2>
                     <div className="flex flex-wrap items-center gap-4">
-                      {item['function'].map((el) => (
-                        <p className="text-[#7d7c7e]">{el}</p>
+                      {item['function'].map((el, index) => (
+                        <p key={index} className="text-[#7d7c7e]">
+                          {el}
+                        </p>
                       ))}
                     </div>
                   </div>
