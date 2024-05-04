@@ -40,41 +40,35 @@ export const Header = memo(() => {
         </svg>
         <div
           className={` ${
-            open ? 'opacity-100 scale-100' : 'opacity-0 scale-0 cursor-default'
+            open ? 'opacity-100 ' : 'opacity-0 cursor-default left-96'
           } visible z-20 gap-4 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]`}
         >
           {menu.map((item, index) => {
             if (item.name === 'Главная') {
               return (
-                open && (
                   <Link
                     key={index}
                     onClick={() => window.scroll(0, 0)}
                     className={`no-underline ${
-                      open ? ' cursor-pointer' : '!cursor-default'
-                    } ${
                       locale.hash === '' && locale.pathname === '/'
                         ? 'text-green-500'
                         : ''
-                    }  text-current`}
+                    } text-current`}
                     replace
                     to={`/${item.link}`}
                   >
                     {item.name}
                   </Link>
-                )
               )
             }
             return (
-              open && (
+
                 <a
                   key={index}
                   className={`no-underline ${
                     locale.hash === item.link && locale.pathname === '/'
                       ? 'text-green-500'
                       : ''
-                  } ${
-                    open ? ' cursor-pointer' : '!cursor-default'
                   } text-current`}
                   href={`/${item.link}`}
                   onClick={() => setOpen(false)}
@@ -82,7 +76,7 @@ export const Header = memo(() => {
                   {item.name}
                 </a>
               )
-            )
+
           })}
         </div>
       </label>
