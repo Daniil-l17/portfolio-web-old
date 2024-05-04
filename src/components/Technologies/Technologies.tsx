@@ -1,4 +1,4 @@
-import { useTheme } from '../../zustand/zustand'
+
 import style from './technologies.module.scss'
 
 const technologies = [
