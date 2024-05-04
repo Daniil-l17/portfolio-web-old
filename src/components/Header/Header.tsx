@@ -77,6 +77,7 @@ export const Header = memo(() => {
                     open ? ' cursor-pointer' : '!cursor-default'
                   } text-current`}
                   href={`/${item.link}`}
+                  onClick={() => setOpen(false)}
                 >
                   {item.name}
                 </a>
