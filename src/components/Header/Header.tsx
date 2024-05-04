@@ -15,8 +15,6 @@ export const Header = memo(() => {
 
   const locale = useLocation()
 
-
-
   useLayoutEffect(() => {
     if (theme === 'dark') document.body.classList.add('darkTheme')
     else document.body.classList.remove('darkTheme')
@@ -32,8 +30,8 @@ export const Header = memo(() => {
       className={`${style.header}`}
     >
       <h1 onClick={togleTheme}>Daniil.dev</h1>
-      <label onClick={() => setOpen((prev) => !prev)} className="hamburger">
-        <svg viewBox="0 0 32 32">
+      <label className="hamburger">
+        <svg onClick={() => setOpen((prev) => !prev)} viewBox="0 0 32 32">
           <path
             className="line line-top-bottom"
             d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
@@ -42,7 +40,7 @@ export const Header = memo(() => {
         </svg>
         <div
           className={` ${
-            open ? 'opacity-100' : 'opacity-0'
+            open ? 'opacity-100' : 'opacity-0 cursor-default'
           } visible gap-4 px-2 items-start py-3 rounded flex flex-col w-[8rem] bg-[#9e9e9ed7] absolute left-[-94px] right-0 top-[47px]`}
         >
           {menu.map((item, index) => {
@@ -52,6 +50,8 @@ export const Header = memo(() => {
                   key={index}
                   onClick={() => window.scroll(0, 0)}
                   className={`no-underline ${
+                    open ? ' cursor-pointer' : '!cursor-default'
+                  } ${
                     locale.hash === '' && locale.pathname === '/'
                       ? 'text-green-500'
                       : ''
@@ -70,7 +70,7 @@ export const Header = memo(() => {
                   locale.hash === item.link && locale.pathname === '/'
                     ? 'text-green-500'
                     : ''
-                }  text-current`}
+                } ${open ? ' cursor-pointer' : '!cursor-default'} text-current`}
                 href={`/${item.link}`}
               >
                 {item.name}
