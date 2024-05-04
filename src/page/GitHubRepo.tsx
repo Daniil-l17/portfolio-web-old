@@ -52,7 +52,7 @@ export default function GitHubRepo() {
   console.log(data)
 
   return (
-    <div className="min-h-[100vh] mx-4 flex ">
+    <div className="min-h-[100vh] justify-center mx-4 flex ">
       <div className=" gap-16 justify-center flex w-auto max-w-[1400px] m-auto flex-col">
         <div className="flex relative justify-between items-center">
           <h2 className=" text-2xl">GitHub репозитории</h2>

@@ -1,6 +1,6 @@
 export const ArrorUp = ({prods}: {prods: () => void}) => {
   return (
-    <div className="fixed scaleHover cursor-pointer bottom-[26px] right-[48px]">
+    <div className="fixed z-10 scaleHover cursor-pointer bottom-[26px] right-[48px]">
       <svg
         onClick={prods}
         xmlns="http://www.w3.org/2000/svg"

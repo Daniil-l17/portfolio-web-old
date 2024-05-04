@@ -15,11 +15,11 @@ export const Project = () => {
           modules={[Scrollbar]}
           className="mySwiper h-[620px] w-[98%] mx-3 "
         >
-          <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 1</SwiperSlide>
-          <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 2</SwiperSlide>
-          <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 3</SwiperSlide>
-          <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 4</SwiperSlide>
-          <SwiperSlide className="  bg-[#333] !h-[97%]">Slide 5</SwiperSlide>
+          <SwiperSlide className=" rounded-md  mr-4 bg-[#333] !h-[97%]">Slide 1</SwiperSlide>
+          <SwiperSlide className=" rounded-md mr-4 bg-[#333] !h-[97%]">Slide 2</SwiperSlide>
+          <SwiperSlide className=" rounded-md mr-4 bg-[#333] !h-[97%]">Slide 3</SwiperSlide>
+          <SwiperSlide className=" rounded-md mr-4 bg-[#333] !h-[97%]">Slide 4</SwiperSlide>
+          <SwiperSlide className=" rounded-md mr-4 bg-[#333] !h-[97%]">Slide 5</SwiperSlide>
         </Swiper>
       </div>
     </div>
