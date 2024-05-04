@@ -8,11 +8,14 @@ import {axiosProject} from '../../config/axios'
 import {Project as IProject} from '../../types/Project'
 import {useInView} from 'react-intersection-observer'
 import {Loading} from '../Loading/Loading'
+import { useTheme } from '../../zustand/zustand'
 export const Project = () => {
   const {ref, inView} = useInView({
     threshold: 0.5,
     triggerOnce: true,
   })
+
+  const {theme} = useTheme()
 
   const {data, isLoading} = useQuery({
     queryKey: ['project'],
@@ -39,7 +42,7 @@ export const Project = () => {
             className="mySwiper w-[98%] acaa mx-3 "
           >
             {data?.map((item, index) => (
-              <SwiperSlide key={index} className=" rounded-md  min-h-[545px] mr-4 bg-[#333] ">
+              <SwiperSlide key={index} className={`rounded-md  min-h-[545px] mr-4 ${theme === 'dark' ? 'bg-[#333]' : 'bg-[#f9f9f9]'} `}>
                 <a
                   className=" block rounded-md max-[600px]:h-[230px] h-[530px] w-full"
                   href={item.deploy}

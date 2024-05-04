@@ -1,3 +1,4 @@
+import { useTheme } from '../../zustand/zustand'
 import style from './technologies.module.scss'
 
 const technologies = [
@@ -16,6 +17,7 @@ const technologies = [
 ] as const
 
 export const Technologies = () => {
+
   return (
     <div
       id="technologies"
@@ -24,7 +26,7 @@ export const Technologies = () => {
       <h2>Технологии</h2>
       <div className="flex justify-center max-w-[1400px] gap-5 flex-wrap">
         {technologies.map((item, index) => (
-          <div key={index} className="card">
+          <div key={index} className='card'>
             <a className="text-current no-underline" >
               <div className="icon">
                 <img width={40} src={`/${item.img}`} alt="" />
