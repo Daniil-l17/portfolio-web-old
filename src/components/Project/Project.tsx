@@ -36,25 +36,31 @@ export const Project = () => {
               hide: true,
             }}
             modules={[Scrollbar]}
-            className="mySwiper  w-[98%] mx-3 "
+            className="mySwiper w-[98%] acaa mx-3 "
           >
             {data?.map((item) => (
               <SwiperSlide className=" rounded-md  mr-4 bg-[#333] ">
-                  <a
-                    className=" block rounded-md  h-[530px] w-full"
-                    href={item.deploy}
-                    target="_blank"
-                  >
-                                    <div
-                  style={{backgroundImage: `url(${item['img']})`}}
-                  className=" cursor-pointer rounded-md  h-full w-full bg-cover bg-no-repeat"
-                ></div>
-                  </a>
+                <a
+                  className=" block rounded-md max-[600px]:h-[230px] h-[530px] w-full"
+                  href={item.deploy}
+                  target="_blank"
+                >
+                  <div
+                    style={{backgroundImage: `url(${item['img']})`}}
+                    className=" cursor-pointer max-[440px]:bg-center rounded-md  h-full w-full bg-cover bg-no-repeat"
+                  ></div>
+                </a>
                 <div className="py-2 px-4 ">
                   <div className="flex justify-between items-center">
                     <h2 className=" uppercase text-base">{item['title']}</h2>
                     <h2 className=" mr-3 text-lg cursor-pointer">
-                      <a href={item.linkGitHub} target='_blank' className='text-current no-underline'>GitHub</a>
+                      <a
+                        href={item.linkGitHub}
+                        target="_blank"
+                        className="text-current no-underline"
+                      >
+                        GitHub
+                      </a>
                     </h2>
                   </div>
                   <p className="text-[#7d7c7e]">{item['description']}</p>

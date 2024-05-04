@@ -97,6 +97,14 @@ body {
 }
 }
 
+.acaa{}
+
+@media(max-width:450px){
+  .acaa{
+    width: 95%;
+  }
+}
+
 .darkTheme {
   color: white;
   transition: all 0.4s ease-in-out;
