@@ -25,7 +25,7 @@ export const Technologies = () => {
       <div className="flex justify-center max-w-[1400px] gap-5 flex-wrap">
         {technologies.map((item, index) => (
           <div key={index} className="card">
-            <a className="text-current no-underline" href="" target="_blank">
+            <a className="text-current no-underline" >
               <div className="icon">
                 <img width={40} src={`/${item.img}`} alt="" />
               </div>
